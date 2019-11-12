@@ -1,0 +1,47 @@
+{
+  "name": "helloworld",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "gs3170981",
+  "repository": "https://github.com/gs3170981/Electron_test.git",
+  "scripts": {
+    "dev": "node_modules/.bin/electron .",
+    "build:linux": "node_modules/.bin/electron-builder -l",
+    "build:windows": "node_modules/.bin/electron-builder -w",
+    "build:mac": "node_modules/.bin/electron-builder -m"
+  },
+  "devDependencies": {
+    "electron": "^7.1.1",
+    "electron-builder": "^22.1.0"
+  },
+  "description": {},
+  "build": {
+    "win": {
+      "icon": "icon.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "menuCategory": true,
+      "allowElevation": false
+    },
+    "linux": {
+      "icon": "icon.png",
+      "category": "Utility",
+      "target": [
+        "AppImage"
+      ]
+    },
+    "mac": {
+      "icon": "icon.png",
+      "type": "development",
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "dmg"
+      ]
+    }
+  }
+}
